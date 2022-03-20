@@ -1,97 +1,233 @@
 <%- include('partials/_header') %>
-	
-<%- include('partials/_nav') %>
+  <%- include('partials/_nav') %>
 
-	<div class="all-title-box">
-		<div class="container text-center">
-			<h1> <%= user.name %> <span class="m_1">Lorem Ipsum dolroin gravida nibh vel velit.</span></h1>
-		</div>
-	</div>
-	
-    <div id="overviews" class="section wb">
+    <div class="all-title-box">
+      <div class="container text-center">
+        <h1>
+          <%= user.name %> <span class="m_1">
+              <%= user.role %>
+            </span>
+        </h1>
+      </div>
+    </div>
+
+    <!-- for students-start---------->
+    <% if(user.role==="student" ){ %>
+      <div id="overviews" class="section wb">
         <div class="container">
-            <div class="row"> 
-                <div class="col-lg-12 blog-post-single">					
-					<div class="blog-author">
-						<div class="author-bio">
-							<h3 class="author_name"><a href="#">Tom Jobs</a></h3>
-							<h5>CEO at <a href="#">SmartEDU</a></h5>
-							<p class="author_det">
-								Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod tempor incididunt  ut aut reiciendise voluptat maiores alias consequaturs aut perferendis doloribus omnis saperet docendi nec, eos ea alii molestiae aliquand.
-							</p>
-						</div>
-						<div class="author-desc">
-							<img src="images/author.jpg" alt="about author">
-						</div>
-					</div>
-					
-                </div><!-- end col -->
-            </div><!-- end row -->
-			<div class="row mt-5"> 
+          <div class="row">
+            <div class="col-lg-12 blog-post-single">
+              <div class="blog-author">
+                <div class="author-bio">
+                  <h3 class="author_name"><a href="#">Tom Jobs</a></h3>
+                  <h5>CEO at <a href="#">SmartEDU</a></h5>
+                  <p class="author_det">
+                    Lorem ipsum dolor sit amet, consectetur adip, sed do eiusmod
+                    tempor incididunt ut aut reiciendise voluptat maiores alias
+                    consequaturs aut perferendis doloribus omnis saperet docendi nec,
+                    eos ea alii molestiae aliquand.
+                  </p>
+                </div>
+                <div class="author-desc">
+                  <img src="https://picsum.photos/200/300/?blur" alt="" />
+
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+          <div class="row mt-5">
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="course-item mb-5">
+                <div class="image-blog">
+                  <img src="images/blog_1.jpg" alt="" class="img-fluid" />
+                </div>
+                <div class="course-br">
+                  <div class="course-title">
+                    <h2><a href="course-single.html" title="">Engineering</a></h2>
+                  </div>
+                  <div class="course-desc">
+                    <p>
+                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo
+                      maiorum intel ogrets geuiat operts elicata libere avisse id
+                      cumlegebat, liber regione eu sit....
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="course-item mb-5">
+                <div class="image-blog">
+                  <img src="images/blog_2.jpg" alt="" class="img-fluid" />
+                </div>
+                <div class="course-br">
+                  <div class="course-title">
+                    <h2>
+                      <a href="course-single.html" title="">Hotel Management</a>
+                    </h2>
+                  </div>
+                  <div class="blog-desc">
+                    <p>
+                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo
+                      maiorum intel ogrets geuiat operts elicata libere avisse id
+                      cumlegebat, liber regione eu sit....
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="course-item mb-5">
+                <div class="image-blog">
+                  <img src="images/blog_2.jpg" alt="" class="img-fluid" />
+                </div>
+                <div class="course-br">
+                  <div class="course-title">
+                    <h2>
+                      <a href="course-single.html" title="">Hotel Management</a>
+                    </h2>
+                  </div>
+                  <div class="blog-desc">
+                    <p>
+                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo
+                      maiorum intel ogrets geuiat operts elicata libere avisse id
+                      cumlegebat, liber regione eu sit....
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+            <div class="col-lg-6 col-md-6 col-12">
+              <div class="course-item mb-5">
+                <div class="image-blog">
+                  <img src="images/blog_2.jpg" alt="" class="img-fluid" />
+                </div>
+                <div class="course-br">
+                  <div class="course-title">
+                    <h2>
+                      <a href="course-single.html" title="">Hotel Management</a>
+                    </h2>
+                  </div>
+                  <div class="blog-desc">
+                    <p>
+                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo
+                      maiorum intel ogrets geuiat operts elicata libere avisse id
+                      cumlegebat, liber regione eu sit....
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- end col -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end container -->
+      </div>
+      <!-- end section -->
+      <% } %>
+        <!-- for students-end ----------->
+
+        <!-- for teachers-start ----------->
+        <% if(user.role==="teacher" ){ %>
+          <div id="overviews" class="section wb">
+            <div class="container">
+              <div class="row">
+                <div class="offset-sm-4 col-sm-4">
+                  <button type="button" class="btn btn-warning text-white align-rihgt" data-toggle="modal"
+                    data-target="#createCourse">
+                    Create Course
+                  </button>
+                </div>
+                <div class="col-lg-12 blog-post-single">
+                  <div class="blog-author">
+                    <div class="author-bio">
+                      <h3 class="author_name">Courses by <%= user.name.toUpperCase() %> </a></h3>
+                    </div>
+                  </div>
+                </div>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+              <div class="row mt-5">
+                <% for(let i = 0; i < courses.length; i++){ %>
                 <div class="col-lg-6 col-md-6 col-12">
-                    <div class="course-item mb-5">
-						<div class="image-blog">
-							<img src="images/blog_1.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="course-single.html" title="">Engineering</a></h2>
-							</div>
-							<div class="course-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-						</div>
-					</div>
-                </div><!-- end col -->
+                  <div class="course-item mb-5">
+                    <!-- <div class="image-blog">
+                      <img src="images/blog_1.jpg" alt="" class="img-fluid" />
+                    </div> -->
+                    <div class="course-br">
+                      <div class="course-title">
+                        <h2><a href="/courses/<%= courses[i].slug %>" title=""><%= courses[i].name %></a></h2>
+                      </div>
+                      <div class="course-desc">
+                        <p>
+                          <%= courses[i].description %>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <% } %>
+                <!-- end col -->
+              </div>
+              <!-- end row -->
+            </div>
+            <!-- end container -->
+          </div>
+          <!-- end section -->
 
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="course-item mb-5">
-						<div class="image-blog">
-							<img src="images/blog_2.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="course-single.html" title="">Hotel Management</a></h2>
-							</div>
-							<div class="blog-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-						</div>
-					</div>
-                </div><!-- end col -->	
-				                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="course-item mb-5">
-						<div class="image-blog">
-							<img src="images/blog_2.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="course-single.html" title="">Hotel Management</a></h2>
-							</div>
-							<div class="blog-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-						</div>
-					</div>
-                </div><!-- end col -->	
-				  <div class="col-lg-6 col-md-6 col-12">
-                    <div class="course-item mb-5">
-						<div class="image-blog">
-							<img src="images/blog_2.jpg" alt="" class="img-fluid">
-						</div>
-						<div class="course-br">
-							<div class="course-title">
-								<h2><a href="course-single.html" title="">Hotel Management</a></h2>
-							</div>
-							<div class="blog-desc">
-								<p>Lorem ipsum door sit amet, fugiat deicata avise id cum, no quo maiorum intel ogrets geuiat operts elicata libere avisse id cumlegebat, liber regione eu sit.... </p>
-							</div>
-						</div>
-					</div>
-                </div><!-- end col -->	
-            </div><!-- end row -->
-        </div><!-- end container -->
-    </div><!-- end section -->
+          <% } %>
+            <!-- for teachers-end ----------->
+
+            <!----------------- modal ------------------>
+            <div class="modal fade" id="createCourse" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Create an online course!
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body offset-sm-1 col-sm-10">
+
+                    <form method="post" action="/courses">
+
+                      <input type="text" name="name" class="form-control mb-2" placeholder="Course Name" required/>
+
+                      <input type="hidden" name="role" placeholder="" value="<%= user.role %>" />
+
+                      <input type="text" name="description" class="form-control mb-2"
+                        placeholder="Course Description" required />
+
+                      <select class="form-control mb-2" name="category" id="" required>
+                        <% for(let i=0; i < categories.length; i++){ %>
+                          <option value="<%= categories[i]._id%>">
+                            <%= categories[i].name %>
+                          </option>
+                          <% } %>
+                      </select>
+
+                      <button type="submit" class="btn btn-warning offset-sm-4 mt-2">
+                        Create course
+                      </button>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
 
 
-	<%- include('partials/_footer') %>
+            <%- include('partials/_footer') %>
