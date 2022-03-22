@@ -11,6 +11,18 @@
           <form class="" name="contactform" method="post" action="users/login">
             <div class="row row-fluid">
               <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
+                <% if(flashMessages){ %>
+                  <% if(flashMessages.success){ %>
+                    <div class="alert-sm alert-success mb-3">
+                      <%= flashMessages.success %>
+                    </div>
+                  <% } else if(flashMessages.error){ %>
+                    <div class="alert alert-danger mb-3">
+                      <%= flashMessages.error %> 
+                    </div>
+                  <% } %>
+
+                <% } %> 
                 <input
                   type="email"
                   name="email"
@@ -28,6 +40,7 @@
                   placeholder="Password"
                 />
               </div>
+               
               <div class="offset-1 col-lg-10 col-md-10 col-sm-10">
                 <button
                   type="submit"

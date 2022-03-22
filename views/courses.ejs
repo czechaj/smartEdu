@@ -30,14 +30,17 @@
                       </div>
                       <div class="course-desc">
                         <p>
-                          <%= courses[i].description %>
+                          <%= courses[i].description.substring(0,110) + "..." %>
                         </p>
                       </div>
                     </div>
                     <div class="course-meta-bot">
-                      <ul>
+                      <ul class="list-unstyled">
                         <li>
-                          <i class="fa fa-calendar" aria-hidden="true"></i>  <%= courses[i].createdAt %>  
+                          <i class="fa fa-calendar" aria-hidden="true"></i>  <%= courses[i].createdAt.toString().substring(0,15) %>  
+                        </li>
+                        <li>
+                          <i class="fa fa-user" aria-hidden="true"></i>  <small>Created by</small> <%= courses[i].user.name %>
                         </li>
                       </ul>
                     </div>
@@ -51,11 +54,11 @@
           <div class="col-lg-3 col-12 right-single">
             <div class="widget-search">
               <div class="site-search-area">
-                <form method="get" id="site-searchform" action="#">
+                <form method="GET" id="site-searchform" action="#">
                   <div>
-                    <input class="input-text form-control" name="search-k" id="search-k"
-                      placeholder="Search keywords..." type="text" />
-                    <input id="searchsubmit" value="Search" type="submit" />
+                    <input class="input-text form-control" name="search" id="search-k"
+                      placeholder="Search..." type="text" />
+                    <button id="searchsubmit" value="Search" type="submit" />
                   </div>
                 </form>
               </div>

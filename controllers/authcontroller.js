@@ -2,16 +2,19 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User');
 const Category = require('../models/Category');
 const Course = require('../models/Course');
+const { validationResult } = require('express-validator');
 
 exports.createUser = async (req, res) => {
   try {
     const user = await User.create(req.body);
+    req.flash('success', "Your registration has been successfully completed, you can login")
     res.redirect('/login');
   } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      err,
-    });
+     const errors = validationResult(req);
+     for(let i = 0; i < errors.array().length; i++){
+      req.flash('error', `${errors.array()[i].msg}`)
+     }
+     res.redirect('/register')
   }
 };
 
@@ -27,16 +30,18 @@ exports.loginUser = (req, res) => {
             req.session.userID = user._id;
             res.status(200).redirect('dashboard');
           } else {
-            res.send('yanlis parola/mail');
+            req.flash('error', `Your password is not correct`);
+            res.status(400).redirect('/login')
           }
         });
       }
+      else{
+        req.flash('error', `User doesn't exist, please enter a valid email or register`);
+        res.status(400).redirect('/login')
+      }
     });
   } catch (err) {
-    res.status(400).json({
-      status: 'fail',
-      err,
-    });
+    
   }
 };
 
@@ -45,9 +50,9 @@ exports.logoutUser = (req, res) => {
 };
 
 exports.getDashboardPage = async (req, res) => {
-  const user = await User.findOne({ _id: req.session.userID });
+  const user = await User.findOne({ _id: req.session.userID }).populate('courses');
   const categories = await Category.find();
-  const courses = await Course.find({ user: req.session.userID });
+  const courses = await Course.find({ user: req.session.userID }).sort('-createdAt');
   res.status(200).render('dashboard', {
     page_name: 'dashboard',
     user,
